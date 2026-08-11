@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MedKit</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Mulish:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<!-- ════════════════════ HOME ════════════════════ -->
+<div id="home" class="screen active">
+  <div class="home-scroll">
+    <div class="home-header">
+      <div class="logo-badge">⚕</div>
+      <div class="logo-wordmark">Med<em>Kit</em></div>
+    </div>
+    <div class="home-tagline">Clinical tools for medical students &amp; practitioners</div>
+    <div class="home-cards">
+      <div class="hcard c-neuro" onclick="openTool('neuro')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top">
+          <div class="hcard-icon">🧠</div>
+          <div class="hcard-chevron">›</div>
+        </div>
+        <div class="hcard-title">Neuro Tester</div>
+        <div class="hcard-desc">GCS calculator, visual cranial nerve guide with interactive skill quiz</div>
+        <div class="hcard-pill">Neurology</div>
+      </div>
+      <div class="hcard c-cardio" onclick="openTool('cardio')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top">
+          <div class="hcard-icon">❤️</div>
+          <div class="hcard-chevron">›</div>
+        </div>
+        <div class="hcard-title">Cardiac Auscultation</div>
+        <div class="hcard-desc">Chest placement guide, audio heart sounds, murmur quiz and ECG patterns</div>
+        <div class="hcard-pill">Cardiology</div>
+      </div>
+      <div class="hcard c-resp" onclick="openTool('resp')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top">
+          <div class="hcard-icon">🫁</div>
+          <div class="hcard-chevron">›</div>
+        </div>
+        <div class="hcard-title">Respiratory Exam</div>
+        <div class="hcard-desc">Lung auscultation map, breath sounds, spirometry pattern practice</div>
+        <div class="hcard-pill">Respiratory</div>
+      </div>
+      <div class="hcard c-osce" onclick="openTool('osce')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top">
+          <div class="hcard-icon">🩺</div>
+          <div class="hcard-chevron">›</div>
+        </div>
+        <div class="hcard-title">OSCE Long Case</div>
+        <div class="hcard-desc">Timed clinical reasoning with investigations, differentials and management</div>
+        <div class="hcard-pill">Clinical Skills</div>
+      </div>
+      <div class="hcard c-spine" onclick="openTool('spine')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top">
+          <div class="hcard-icon">🦴</div>
+          <div class="hcard-chevron">›</div>
+        </div>
+        <div class="hcard-title">Spinal Neurology</div>
+        <div class="hcard-desc">Vertebral levels, dermatome map, spinal tracts and lesion localiser</div>
+        <div class="hcard-pill">Neurology</div>
+      </div>
+      <div class="hcard c-ecg" onclick="openTool('ecgt')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">📈</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">ECG Trainer</div>
+        <div class="hcard-desc">Systematic ECG reading, rhythm identification quiz — AF, VT, WPW, Brugada, ACS and more</div>
+        <div class="hcard-pill">Cardiology</div>
+      </div>
+      <div class="hcard c-drugs" onclick="openTool('drugs')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">💊</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">Drug Reference</div>
+        <div class="hcard-desc">Framework drugs — antiarrhythmics, DMARDs, anticoagulants, steroids, chemo, antiepileptics</div>
+        <div class="hcard-pill">Pharmacology</div>
+      </div>
+      <div class="hcard c-ix" onclick="openTool('ixt')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">🔬</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">Investigations Trainer</div>
+        <div class="hcard-desc">Interpret bloods, LFTs, TFTs, ABG, CSF, synovial fluid and urine dipstick with clinical vignettes</div>
+        <div class="hcard-pill">All Topics</div>
+      </div>
+      <div class="hcard c-chk" onclick="openTool('chk')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">✅</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">Topic Checklist</div>
+        <div class="hcard-desc">Work through all 6 framework topics, self-rate confidence and track gaps</div>
+        <div class="hcard-pill">Self-Assessment</div>
+      </div>
+      <div class="hcard c-ddx" onclick="openTool('ddx')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">🧩</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">DDx Builder</div>
+        <div class="hcard-desc">Choose a presenting complaint, build a ranked differential with red flags and key investigations</div>
+        <div class="hcard-pill">Clinical Reasoning</div>
+      </div>
+      <div class="hcard c-pharm" onclick="openTool('pharm')">
+        <div class="hcard-glow"></div>
+        <div class="hcard-top"><div class="hcard-icon">🧬</div><div class="hcard-chevron">›</div></div>
+        <div class="hcard-title">Pharmacology</div>
+        <div class="hcard-desc">Antibiotic groups, analgesic mechanisms and WHO ladder, diuretic classes</div>
+        <div class="hcard-pill">Pharmacology</div>
+      </div>
+    </div>
+    <div class="home-footer">MedKit · Educational Use Only</div>
+  </div>
+</div>
+
+<!-- ════════════════════ NEURO TESTER ════════════════════ -->
+<div id="neuro" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🧠</div>
+    <div class="tbar-info">
+      <div class="tbar-title">Neuro Tester</div>
+      <div class="tbar-sub">GCS · Cranial Nerves · Skill Quiz</div>
+    </div>
+  </div>
+  <div class="tool-body">
+    <div class="neuro-tabs">
+      <div class="ntab on" onclick="switchNTab('gcs',this)">GCS</div>
+      <div class="ntab" onclick="switchNTab('cn',this)">Cranial Nerves</div>
+      <div class="ntab" onclick="switchNTab('quiz',this)">Skill Quiz</div>
+    </div>
+
+    <!-- GCS Panel -->
+    <div id="np-gcs" class="panel on">
+      <div class="sec-label">Eye Opening (E)</div>
+      <div class="gcs-section">
+        <div class="gcs-btns">
+          <div class="gcs-btn" onclick="setGCS('e',1,this)"><div class="val">1</div><span class="lbl">None</span></div>
+          <div class="gcs-btn" onclick="setGCS('e',2,this)"><div class="val">2</div><span class="lbl">To Pain</span></div>
+          <div class="gcs-btn" onclick="setGCS('e',3,this)"><div class="val">3</div><span class="lbl">To Voice</span></div>
+          <div class="gcs-btn" onclick="setGCS('e',4,this)"><div class="val">4</div><span class="lbl">Spontaneous</span></div>
+        </div>
+      </div>
+      <div class="sec-label">Verbal Response (V)</div>
+      <div class="gcs-section">
+        <div class="gcs-btns">
+          <div class="gcs-btn" onclick="setGCS('v',1,this)"><div class="val">1</div><span class="lbl">None</span></div>
+          <div class="gcs-btn" onclick="setGCS('v',2,this)"><div class="val">2</div><span class="lbl">Sounds</span></div>
+          <div class="gcs-btn" onclick="setGCS('v',3,this)"><div class="val">3</div><span class="lbl">Words</span></div>
+          <div class="gcs-btn" onclick="setGCS('v',4,this)"><div class="val">4</div><span class="lbl">Confused</span></div>
+          <div class="gcs-btn" onclick="setGCS('v',5,this)"><div class="val">5</div><span class="lbl">Oriented</span></div>
+        </div>
+      </div>
+      <div class="sec-label">Motor Response (M)</div>
+      <div class="gcs-section">
+        <div class="gcs-btns">
+          <div class="gcs-btn" onclick="setGCS('m',1,this)"><div class="val">1</div><span class="lbl">None</span></div>
+          <div class="gcs-btn" onclick="setGCS('m',2,this)"><div class="val">2</div><span class="lbl">Extension</span></div>
+          <div class="gcs-btn" onclick="setGCS('m',3,this)"><div class="val">3</div><span class="lbl">Flexion</span></div>
+          <div class="gcs-btn" onclick="setGCS('m',4,this)"><div class="val">4</div><span class="lbl">Withdrawal</span></div>
+          <div class="gcs-btn" onclick="setGCS('m',5,this)"><div class="val">5</div><span class="lbl">Localises</span></div>
+          <div class="gcs-btn" onclick="setGCS('m',6,this)"><div class="val">6</div><span class="lbl">Obeys</span></div>
+        </div>
+      </div>
+      <div class="gcs-result" id="gcs-result">
+        <div class="gcs-big" id="gcs-total">–</div>
+        <div class="gcs-sub" id="gcs-interp">–</div>
+        <div class="gcs-breakdown">
+          <div class="gcs-part"><div class="p-val" id="gcs-e">–</div><div class="p-lbl">Eye (E)</div></div>
+          <div class="gcs-part"><div class="p-val" id="gcs-v">–</div><div class="p-lbl">Verbal (V)</div></div>
+          <div class="gcs-part"><div class="p-val" id="gcs-m">–</div><div class="p-lbl">Motor (M)</div></div>
+        </div>
+      </div>
+      <div class="btn-row"><button class="btn btn-ghost" onclick="resetGCS()">↺ Reset</button></div>
+    </div>
+
+    <!-- CN Panel -->
+    <div id="np-cn" class="panel">
+      <div class="sec-label">Tap a nerve to see the visual test guide</div>
+      <div class="cn-grid" id="cn-grid"></div>
+      <div class="cn-detail" id="cn-detail"></div>
+    </div>
+
+    <!-- Quiz Panel -->
+    <div id="np-quiz" class="panel">
+      <div id="quiz-body"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ CARDIO ════════════════════ -->
+<div id="cardio" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">❤️</div>
+    <div class="tbar-info">
+      <div class="tbar-title">Cardiac Auscultation</div>
+      <div class="tbar-sub">Sounds · Murmurs · ECG</div>
+    </div>
+  </div>
+  <div class="tool-body">
+    <div class="tabs">
+      <div class="tab on" onclick="switchTab('cardio','sites',this)">Chest Map</div>
+      <div class="tab" onclick="switchTab('cardio','sounds',this)">Heart Sounds</div>
+      <div class="tab" onclick="switchTab('cardio','murmursite',this)">Murmur Sites</div>
+      <div class="tab" onclick="switchTab('cardio','murmurs',this)">Murmur Quiz</div>
+      <div class="tab" onclick="switchTab('cardio','ecg',this)">ECG Library</div>
+      <div class="tab" onclick="switchTab('cardio','ecgquiz',this)">ECG Quiz</div>
+    </div>
+    <div id="cp-sites" class="panel on">
+      <div class="sec-label">Tap a site — hear what's expected at that location</div>
+      <div class="chest-wrap" id="chest-wrap"></div>
+      <div class="sound-info-box" id="site-info-box">
+        <div class="sib-site">Select a site above</div>
+        <div class="sib-expect">Tap any coloured circle to hear the dominant sound at that site and see which murmurs are best heard there.</div>
+      </div>
+    </div>
+    <div id="cp-sounds" class="panel">
+      <div class="sec-label">Normal &amp; Added Heart Sounds — tap ▶ to listen</div>
+      <div id="sounds-list"></div>
+    </div>
+    <div id="cp-murmursite" class="panel">
+      <div class="sec-label">Select a murmur — hear it and see where to listen on the chest</div>
+      <div id="murmur-site-list"></div>
+    </div>
+    <div id="cp-murmurs" class="panel">
+      <div class="sec-label">Listen &amp; identify the murmur</div>
+      <div id="murmur-quiz-list"></div>
+    </div>
+    <div id="cp-ecg" class="panel">
+      <div class="sec-label">ECG Library — tap any strip to expand key features</div>
+      <div id="ecg-list"></div>
+    </div>
+    <div id="cp-ecgquiz" class="panel">
+      <div class="sec-label">ECG Clinical Scenarios — 8 questions</div>
+      <div id="ecg-cardio-quiz"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ RESPIRATORY ════════════════════ -->
+<div id="resp" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🫁</div>
+    <div class="tbar-info">
+      <div class="tbar-title">Respiratory Exam</div>
+      <div class="tbar-sub">Auscultation · Breath Sounds · Spirometry</div>
+    </div>
+  </div>
+  <div class="tool-body">
+    <div class="tabs">
+      <div class="tab on" onclick="switchTab('resp','lungmap',this)">Lung Map</div>
+      <div class="tab" onclick="switchTab('resp','breathsounds',this)">Breath Sounds</div>
+      <div class="tab" onclick="switchTab('resp','spiro',this)">Spirometry</div>
+    </div>
+    <div id="rp-lungmap" class="panel on">
+      <div class="sec-label">Tap a site on the chest</div>
+      <div class="lung-wrap" id="lung-wrap"></div>
+      <div class="resp-info-box" id="lung-info-box">
+        <div class="rib-site">Select a site above</div>
+        <div class="rib-expect">Tap the numbered auscultation points to see the expected findings and what pathology might sound like at each zone.</div>
+      </div>
+    </div>
+    <div id="rp-breathsounds" class="panel">
+      <div class="sec-label">Breath Sound Library</div>
+      <div id="breath-sounds-list"></div>
+    </div>
+    <div id="rp-spiro" class="panel">
+      <div class="sec-label">Pattern Practice — select a spirometry type</div>
+      <div class="spiro-pattern-btns" id="spiro-pattern-btns"></div>
+      <div class="spiro-container" id="spiro-container">
+        <div class="spiro-header">
+          <div class="spiro-title" id="spiro-title">Select a pattern</div>
+          <span class="badge badge-info" id="spiro-badge"></span>
+        </div>
+        <canvas id="spiro-canvas" class="spiro-canvas" width="600" height="240"></canvas>
+        <div class="spiro-values" id="spiro-values"></div>
+        <div class="spiro-result" id="spiro-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ SPINAL NEUROLOGY ════════════════════ -->
+<div id="spine" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🦴</div>
+    <div class="tbar-info">
+      <div class="tbar-title">Spinal Neurology</div>
+      <div class="tbar-sub">Levels · Dermatomes · Tracts · Localiser</div>
+    </div>
+  </div>
+  <div class="tool-body">
+    <div class="spine-tabs">
+      <div class="stab on" onclick="switchSpineTab('levels',this)">Vertebral Levels</div>
+      <div class="stab" onclick="switchSpineTab('dermatomes',this)">Dermatomes</div>
+      <div class="stab" onclick="switchSpineTab('tracts',this)">Spinal Tracts</div>
+      <div class="stab" onclick="switchSpineTab('localiser',this)">Lesion Localiser</div>
+    </div>
+
+    <!-- VERTEBRAL LEVELS -->
+    <div id="sp-levels" class="spine-panel on">
+      <div class="sec-label">Tap a level for nerve roots, motor, sensation &amp; reflexes</div>
+      <div id="vl-list"></div>
+    </div>
+
+    <!-- DERMATOME MAP -->
+    <div id="sp-dermatomes" class="spine-panel">
+      <div class="sec-label">Tap a zone to identify the dermatome level</div>
+      <div class="derm-wrap">
+        <div class="derm-svg-col">
+          <svg id="derm-svg" viewBox="0 0 140 340" width="140" xmlns="http://www.w3.org/2000/svg">
+            <!-- Head/neck -->
+            <ellipse cx="70" cy="22" rx="22" ry="26" fill="#1d2840" stroke="#2a3a5a" stroke-width="1.2"/>
+            <!-- Neck -->
+            <rect x="60" y="46" width="20" height="14" rx="4" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Torso -->
+            <path d="M32,60 Q70,54 108,60 L112,190 Q70,198 28,190 Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1.2"/>
+            <!-- Arms -->
+            <path d="M32,65 Q18,80 14,120 Q12,138 16,148 Q22,155 28,148 Q32,130 34,108 L36,78Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <path d="M108,65 Q122,80 126,120 Q128,138 124,148 Q118,155 112,148 Q108,130 106,108 L104,78Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Forearms/Hands -->
+            <path d="M16,148 Q10,168 12,186 Q14,196 20,198 Q26,196 28,186 Q28,168 28,148Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <path d="M124,148 Q130,168 128,186 Q126,196 120,198 Q114,196 112,186 Q112,168 112,148Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Pelvis -->
+            <path d="M28,190 Q70,200 112,190 L114,220 Q70,230 26,220 Z" fill="#1d2840" stroke="#2a3a5a" stroke-width="1.2"/>
+            <!-- Thighs -->
+            <rect x="34" y="220" width="32" height="60" rx="10" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <rect x="74" y="220" width="32" height="60" rx="10" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Lower legs -->
+            <rect x="37" y="278" width="26" height="50" rx="8" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <rect x="77" y="278" width="26" height="50" rx="8" fill="#1d2840" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Dermatome overlay zones (clickable) -->
+            <!-- C2-C4: head/neck -->
+            <ellipse class="derm-zone" onclick="showDerm('C2-C4')" cx="70" cy="30" rx="22" ry="26" fill="rgba(255,179,71,0.18)" stroke="#ffb347" stroke-width="1"/>
+            <!-- C3-C4: shoulder tops -->
+            <rect class="derm-zone" onclick="showDerm('C3-C4')" x="24" y="60" width="92" height="18" rx="6" fill="rgba(255,179,71,0.14)" stroke="#ffb347" stroke-width="1"/>
+            <!-- C5: outer upper arm -->
+            <rect class="derm-zone" onclick="showDerm('C5')" x="14" y="65" width="20" height="40" rx="6" fill="rgba(74,158,255,0.2)" stroke="#4a9eff" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('C5')" x="106" y="65" width="20" height="40" rx="6" fill="rgba(74,158,255,0.2)" stroke="#4a9eff" stroke-width="1"/>
+            <!-- C6: thumb side forearm -->
+            <rect class="derm-zone" onclick="showDerm('C6')" x="10" y="148" width="14" height="50" rx="5" fill="rgba(0,212,170,0.2)" stroke="#00d4aa" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('C6')" x="116" y="148" width="14" height="50" rx="5" fill="rgba(0,212,170,0.2)" stroke="#00d4aa" stroke-width="1"/>
+            <!-- C7: middle forearm/hand -->
+            <rect class="derm-zone" onclick="showDerm('C7')" x="20" y="152" width="12" height="44" rx="5" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('C7')" x="108" y="152" width="12" height="44" rx="5" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="1"/>
+            <!-- C8: pinky side -->
+            <rect class="derm-zone" onclick="showDerm('C8')" x="28" y="150" width="10" height="42" rx="5" fill="rgba(244,84,122,0.2)" stroke="#f4547a" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('C8')" x="102" y="150" width="10" height="42" rx="5" fill="rgba(244,84,122,0.2)" stroke="#f4547a" stroke-width="1"/>
+            <!-- T1-T12: chest/abdomen bands -->
+            <rect class="derm-zone" onclick="showDerm('T1-T4')" x="32" y="78" width="76" height="38" rx="4" fill="rgba(52,211,153,0.12)" stroke="#34d399" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('T5-T8')" x="30" y="116" width="80" height="38" rx="4" fill="rgba(52,211,153,0.18)" stroke="#34d399" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('T9-T12')" x="28" y="154" width="84" height="36" rx="4" fill="rgba(52,211,153,0.22)" stroke="#34d399" stroke-width="1"/>
+            <!-- L1-L2: groin/upper thigh -->
+            <rect class="derm-zone" onclick="showDerm('L1-L2')" x="28" y="190" width="84" height="40" rx="6" fill="rgba(255,179,71,0.18)" stroke="#ffb347" stroke-width="1"/>
+            <!-- L3: inner/anterior thigh -->
+            <rect class="derm-zone" onclick="showDerm('L3')" x="36" y="228" width="30" height="35" rx="8" fill="rgba(74,158,255,0.2)" stroke="#4a9eff" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('L3')" x="74" y="228" width="30" height="35" rx="8" fill="rgba(74,158,255,0.2)" stroke="#4a9eff" stroke-width="1"/>
+            <!-- L4: medial leg -->
+            <rect class="derm-zone" onclick="showDerm('L4')" x="38" y="262" width="22" height="66" rx="8" fill="rgba(0,212,170,0.2)" stroke="#00d4aa" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('L4')" x="80" y="262" width="22" height="66" rx="8" fill="rgba(0,212,170,0.2)" stroke="#00d4aa" stroke-width="1"/>
+            <!-- L5: dorsum foot/lateral leg -->
+            <rect class="derm-zone" onclick="showDerm('L5')" x="48" y="278" width="14" height="50" rx="6" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('L5')" x="78" y="278" width="14" height="50" rx="6" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="1"/>
+            <!-- S1: lateral foot/sole -->
+            <rect class="derm-zone" onclick="showDerm('S1')" x="55" y="290" width="14" height="38" rx="6" fill="rgba(244,84,122,0.2)" stroke="#f4547a" stroke-width="1"/>
+            <rect class="derm-zone" onclick="showDerm('S1')" x="71" y="290" width="14" height="38" rx="6" fill="rgba(244,84,122,0.2)" stroke="#f4547a" stroke-width="1"/>
+            <text x="70" y="336" text-anchor="middle" font-size="8" fill="#5a6a8a">Tap zones to identify levels</text>
+          </svg>
+        </div>
+        <div class="derm-info" id="derm-info">
+          <div class="derm-level">Select a zone</div>
+          <div class="derm-region" style="color:var(--muted2)">Tap any coloured region on the body diagram to identify the dermatome level, associated nerve roots, clinical findings and key reflex.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SPINAL TRACTS -->
+    <div id="sp-tracts" class="spine-panel">
+      <div class="sec-label">Spinal cord cross-section — tap a tract</div>
+      <div class="cord-wrap">
+        <div class="cord-svg-col">
+          <svg viewBox="0 0 160 160" width="150" xmlns="http://www.w3.org/2000/svg">
+            <rect width="160" height="160" fill="#161e2e" rx="12"/>
+            <!-- Grey matter H shape -->
+            <ellipse cx="80" cy="80" rx="52" ry="46" fill="#1d2840" stroke="#2a3a5a" stroke-width="1.5"/>
+            <!-- Central canal -->
+            <circle cx="80" cy="80" r="4" fill="#0f1623" stroke="#2a3a5a" stroke-width="1"/>
+            <!-- Grey matter horns -->
+            <path d="M80,80 Q65,68 58,58 Q62,54 68,58 Q76,68 80,75Z" fill="#253048"/>
+            <path d="M80,80 Q95,68 102,58 Q98,54 92,58 Q84,68 80,75Z" fill="#253048"/>
+            <path d="M80,80 Q65,92 58,102 Q62,106 68,102 Q76,92 80,85Z" fill="#253048"/>
+            <path d="M80,80 Q95,92 102,102 Q98,106 92,102 Q84,92 80,85Z" fill="#253048"/>
+            <!-- Dorsal columns (posterior) - teal -->
+            <path class="tract-zone" onclick="selectTract('dc')" d="M58,34 Q80,26 102,34 Q102,52 80,58 Q58,52 58,34Z" fill="rgba(0,212,170,0.25)" stroke="#00d4aa" stroke-width="1.5" cursor="pointer"/>
+            <text x="80" y="46" text-anchor="middle" font-size="7" fill="#00d4aa" pointer-events="none">DC</text>
+            <!-- Lateral corticospinal (L) - red -->
+            <path class="tract-zone" onclick="selectTract('lcst')" d="M28,62 Q42,55 52,66 Q48,80 34,84 Q22,78 28,62Z" fill="rgba(244,84,122,0.25)" stroke="#f4547a" stroke-width="1.5" cursor="pointer"/>
+            <text x="38" y="74" text-anchor="middle" font-size="6" fill="#f4547a" pointer-events="none">CST</text>
+            <!-- Lateral corticospinal (R) -->
+            <path class="tract-zone" onclick="selectTract('lcst')" d="M132,62 Q118,55 108,66 Q112,80 126,84 Q138,78 132,62Z" fill="rgba(244,84,122,0.25)" stroke="#f4547a" stroke-width="1.5" cursor="pointer"/>
+            <text x="122" y="74" text-anchor="middle" font-size="6" fill="#f4547a" pointer-events="none">CST</text>
+            <!-- Spinothalamic (L) - blue -->
+            <path class="tract-zone" onclick="selectTract('stt')" d="M28,90 Q22,104 32,114 Q44,116 52,106 Q50,90 38,88Z" fill="rgba(74,158,255,0.25)" stroke="#4a9eff" stroke-width="1.5" cursor="pointer"/>
+            <text x="38" y="104" text-anchor="middle" font-size="6" fill="#4a9eff" pointer-events="none">STT</text>
+            <!-- Spinothalamic (R) -->
+            <path class="tract-zone" onclick="selectTract('stt')" d="M132,90 Q138,104 128,114 Q116,116 108,106 Q110,90 122,88Z" fill="rgba(74,158,255,0.25)" stroke="#4a9eff" stroke-width="1.5" cursor="pointer"/>
+            <text x="122" y="104" text-anchor="middle" font-size="6" fill="#4a9eff" pointer-events="none">STT</text>
+            <!-- Posterior columns (medial) - purple split -->
+            <path class="tract-zone" onclick="selectTract('gc')" d="M68,36 Q80,30 80,56 Q70,52 68,36Z" fill="rgba(167,139,250,0.3)" stroke="#a78bfa" stroke-width="1" cursor="pointer"/>
+            <path class="tract-zone" onclick="selectTract('gc')" d="M92,36 Q80,30 80,56 Q90,52 92,36Z" fill="rgba(167,139,250,0.2)" stroke="#a78bfa" stroke-width="1" cursor="pointer"/>
+            <!-- Labels -->
+            <text x="80" y="150" text-anchor="middle" font-size="8" fill="#5a6a8a">Tap tracts to learn</text>
+            <text x="80" y="18" text-anchor="middle" font-size="8" fill="#5a6a8a">POSTERIOR</text>
+            <text x="80" y="142" text-anchor="middle" font-size="8" fill="#5a6a8a">ANTERIOR</text>
+          </svg>
+        </div>
+        <div class="cord-info-col">
+          <div id="tract-info">
+            <div class="cord-title">Select a tract</div>
+            <div class="cord-desc">Tap any coloured region on the spinal cord cross-section to learn about that tract — what it carries, where it decussates, and what a lesion causes.</div>
+          </div>
+        </div>
+      </div>
+      <div class="tract-list" id="tract-list"></div>
+    </div>
+
+    <!-- LESION LOCALISER -->
+    <div id="sp-localiser" class="spine-panel">
+      <div class="sec-label">Select the symptom pattern to localise the lesion</div>
+      <div class="ll-symptom-grid" id="ll-grid"></div>
+      <div class="ll-result" id="ll-result"></div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ ECG TRAINER ════════════════════ -->
+<div id="ecgt" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">📈</div>
+    <div class="tbar-info"><div class="tbar-title">ECG Trainer</div><div class="tbar-sub">Systematic Read · Rhythm Quiz · Blind ID</div></div>
+  </div>
+  <div class="tool-body">
+    <div class="ecg-mode-row">
+      <div class="ecg-mode-btn on" onclick="switchECGMode('read',this)">📖 Learn</div>
+      <div class="ecg-mode-btn" onclick="switchECGMode('quiz',this)">❓ Quiz</div>
+      <div class="ecg-mode-btn" onclick="switchECGMode('blind',this)">🎯 Blind ID</div>
+    </div>
+    <!-- LEARN MODE -->
+    <div id="ecgm-read">
+      <div class="sec-label">Select a rhythm to analyse step by step</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px" id="ecgt-picker"></div>
+      <div id="ecgt-analysis" style="display:none">
+        <div class="ecg-canvas-wrap"><div class="ecg-canvas-grid"></div><canvas id="ecgt-canvas" height="80"></canvas></div>
+        <div class="ecg-rate-row" id="ecgt-chips"></div>
+        <div id="ecgt-steps"></div>
+        <div style="background:var(--surf2);border-radius:12px;padding:14px;margin-top:4px">
+          <div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px">Diagnosis</div>
+          <div id="ecgt-diagnosis" style="font-size:13px;line-height:1.6"></div>
+        </div>
+        <div style="background:rgba(244,84,122,.08);border:1px solid rgba(244,84,122,.2);border-radius:12px;padding:14px;margin-top:8px">
+          <div style="font-size:11px;color:var(--red);text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px;font-weight:700">⚠ Management</div>
+          <div id="ecgt-mgmt" style="font-size:13px;color:var(--muted2);line-height:1.6"></div>
+        </div>
+      </div>
+    </div>
+    <!-- QUIZ MODE -->
+    <div id="ecgm-quiz" style="display:none">
+      <div id="ecgt-quiz-body"></div>
+    </div>
+    <!-- BLIND ID MODE -->
+    <div id="ecgm-blind" style="display:none">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px">
+        <div>
+          <div style="font-size:11px;color:var(--muted2);text-transform:uppercase;letter-spacing:.5px">Your Score</div>
+          <div style="font-family:'Syne',sans-serif;font-size:24px;font-weight:800;color:var(--green)" id="blind-score">0 / 0</div>
+        </div>
+        <button class="btn btn-ghost" style="width:auto;padding:10px 16px" onclick="newBlindECG()">Next ECG →</button>
+      </div>
+      <div id="blind-ecg-wrap">
+        <div style="font-size:13px;color:var(--muted2);text-align:center;padding:20px">Tap "Next ECG" to start</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════════════════ DRUG REFERENCE ════════════════════ -->
+<div id="drugs" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">💊</div>
+    <div class="tbar-info"><div class="tbar-title">Drug Reference</div><div class="tbar-sub">Framework Pharmacology</div></div>
+  </div>
+  <div class="tool-body">
+    <input class="drug-search" id="drug-search" placeholder="Search drug or class…" oninput="filterDrugs(this.value)">
+    <div class="drug-cat-btns" id="drug-cats"></div>
+    <div id="drug-list"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ INVESTIGATIONS TRAINER ════════════════════ -->
+<div id="ixt" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🔬</div>
+    <div class="tbar-info"><div class="tbar-title">Investigations Trainer</div><div class="tbar-sub">Interpret · Reason · Diagnose</div></div>
+  </div>
+  <div class="tool-body">
+    <div class="ix-cat-row" id="ix-cats"></div>
+    <div id="ix-panels"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ TOPIC CHECKLIST ════════════════════ -->
+<div id="chk" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">✅</div>
+    <div class="tbar-info"><div class="tbar-title">Topic Checklist</div><div class="tbar-sub">2026 Framework Self-Assessment</div></div>
+  </div>
+  <div class="tool-body">
+    <div class="chk-legend">
+      <span><span style="width:12px;height:12px;border-radius:3px;background:rgba(244,84,122,.3);display:inline-block"></span> Not sure</span>
+      <span><span style="width:12px;height:12px;border-radius:3px;background:rgba(255,179,71,.3);display:inline-block"></span> Partial</span>
+      <span><span style="width:12px;height:12px;border-radius:3px;background:rgba(52,211,153,.3);display:inline-block"></span> Confident</span>
+    </div>
+    <div class="chk-topic-btns" id="chk-topic-btns"></div>
+    <div class="chk-progress-wrap">
+      <div class="chk-prog-row"><span class="chk-prog-title" id="chk-prog-title">Topic 1</span><span class="chk-prog-pct" id="chk-prog-pct">0%</span></div>
+      <div class="chk-prog-bar"><div class="chk-prog-fill" id="chk-prog-fill" style="width:0%"></div></div>
+    </div>
+    <div id="chk-list"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ DDX BUILDER ════════════════════ -->
+<div id="ddx" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🧩</div>
+    <div class="tbar-info"><div class="tbar-title">DDx Builder</div><div class="tbar-sub">Presenting Complaint → Differential</div></div>
+  </div>
+  <div class="tool-body">
+    <div class="sec-label">Choose a presenting complaint</div>
+    <div class="ddx-complaint-grid" id="ddx-grid"></div>
+    <div class="ddx-filter-row" id="ddx-filters" style="display:none"></div>
+    <div class="ddx-result" id="ddx-result"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ PHARMACOLOGY ════════════════════ -->
+<div id="pharm" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="goHome()">‹</div>
+    <div class="tbar-icon">🧬</div>
+    <div class="tbar-info"><div class="tbar-title">Pharmacology</div><div class="tbar-sub">Antibiotics · Analgesics · Diuretics</div></div>
+  </div>
+  <div class="tool-body">
+    <div class="pharm-mode-row">
+      <div class="pharm-mode-btn on" onclick="switchPharm('abx',this)">🦠 Antibiotics</div>
+      <div class="pharm-mode-btn" onclick="switchPharm('analg',this)">💊 Analgesics</div>
+      <div class="pharm-mode-btn" onclick="switchPharm('diur',this)">💧 Diuretics</div>
+      <div class="pharm-mode-btn" onclick="switchPharm('pharmquiz',this)">❓ Quiz</div>
+    </div>
+    <div id="pm-abx"></div>
+    <div id="pm-analg" style="display:none"></div>
+    <div id="pm-diur" style="display:none"></div>
+    <div id="pm-pharmquiz" style="display:none"></div>
+  </div>
+</div>
+
+<!-- ════════════════════ OSCE LONG CASE ════════════════════ -->
+<div id="osce" class="screen">
+  <div class="tool-bar">
+    <div class="back-btn" onclick="oscBack()">‹</div>
+    <div class="tbar-icon">🩺</div>
+    <div class="tbar-info">
+      <div class="tbar-title">OSCE Long Case</div>
+      <div class="tbar-sub">Clinical Reasoning · Management</div>
+    </div>
+  </div>
+  <div class="osce-timer-bar" id="osce-timer-bar" style="display:none">
+    <div>
+      <div class="timer-label">Station Time</div>
+      <div class="timer-display" id="timer-disp">20:00</div>
+    </div>
+    <div style="flex:1;padding:0 16px">
+      <div class="progress-bar"><div class="progress-fill" id="timer-prog" style="width:100%"></div></div>
+    </div>
+    <div class="timer-controls">
+      <button class="timer-btn go" id="timer-toggle" onclick="toggleTimer()">Start</button>
+      <button class="timer-btn" onclick="resetTimer()">↺</button>
+    </div>
+  </div>
+  <div class="tool-body" id="osce-body">
+    <div id="osce-picker">
+      <div class="sec-label">Choose a case</div>
+      <div id="scenario-list"></div>
+    </div>
+    <div id="osce-session" style="display:none">
+      <div class="lc-patient" id="lc-patient-card"></div>
+      <div class="tabs">
+        <div class="tab on" onclick="switchOsceTab('hx',this)">History</div>
+        <div class="tab" onclick="switchOsceTab('ex',this)">Examination</div>
+        <div class="tab" onclick="switchOsceTab('ix',this)">Investigations</div>
+        <div class="tab" onclick="switchOsceTab('mx',this)">Management</div>
+      </div>
+      <div id="op-hx" class="panel on"></div>
+      <div id="op-ex" class="panel"></div>
+      <div id="op-ix" class="panel"></div>
+      <div id="op-mx" class="panel"></div>
+      <div class="case-summary" id="case-summary"></div>
+      <div class="btn-row" style="margin-top:4px">
+        <button class="btn btn-ghost" onclick="endCase()" style="flex:1">‹ Cases</button>
+        <button class="btn btn-blue" onclick="restartCase()" style="flex:1">↺ Restart</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="js/app.js"></script>
+</body>
+</html>
